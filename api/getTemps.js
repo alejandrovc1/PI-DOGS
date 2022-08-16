@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios')
 const { API_KEY } = process.env;
 const { Temperament } = require('./src/db.js')
 
