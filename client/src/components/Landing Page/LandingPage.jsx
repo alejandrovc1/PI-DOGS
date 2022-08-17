@@ -1,19 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./LandingPage.module.css";
+import videoPerros from './videoPerros.mp4';
 
 function LandingPage() {
   return (
-    <div className={styles.mainDiv}>
-      <h1 className={styles.title}>Welcome to Dogs Finder!</h1>
-      <div className={styles.dogimg}>
-        <Link to="/home">
-          <img src="https://i.imgur.com/mOiSapI.png" alt="dog face" />
-        </Link>
-      </div>
+    <div className='myvideo'>
+      <p className={styles.title}>Welcome to Dogs Finder!</p>
       <Link to="/home">
         <button className={styles.button}>Enter to site</button>
       </Link>
+      <video src={videoPerros} autoPlay loop muted />
     </div>
   );
 }
