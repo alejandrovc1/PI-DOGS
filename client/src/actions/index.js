@@ -12,15 +12,15 @@ export const GET_DETAIL = 'GET_DETAIL';
 export const CLEAR_DETAIL = 'CLEAR_DETAIL';
 export const ADD_BREED = 'ADD_BREED';
 
-const SERVERHEROKU = 'https://dogs-pi-spa.herokuapp.com'
+const SERVER = 'http://localhost:3001'
 
 export const getBreeds = () => async dispatch => {
-  const response = await axios.get(`${SERVERHEROKU}/dogs`)
+  const response = await axios.get(`${SERVER}/dogs`)
   dispatch({ type: 'GET_BREEDS', payload: response.data })
 }
 
 export const getTemps = () => async dispatch => {
-  const temps = await axios.get(`${SERVERHEROKU}/temperament`)
+  const temps = await axios.get(`${SERVER}/temperament`)
   dispatch({ type: 'GET_TEMPERAMENT', payload: temps.data })
 }
 
@@ -41,7 +41,7 @@ export function filterOrigin(option) {
 }
 
 export const searchBreedDetail = (id) => async dispatch => {
-  const response = await axios.get(`${SERVERHEROKU}/dogs/${id}`)
+  const response = await axios.get(`${SERVER}/dogs/${id}`)
   dispatch({ type: 'GET_DETAIL', payload: response.data })
 }
 
@@ -49,7 +49,7 @@ export function addBreed(breed) {
   return async function (dispatch) {
 
     const response = await axios.post(
-      `${SERVERHEROKU}/dog`,
+      `${SERVER}/dog`,
       breed
     );
     dispatch({ type: "ADD_BREED", payload: response });
