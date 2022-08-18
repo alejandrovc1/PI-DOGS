@@ -15,25 +15,25 @@ export const ADD_BREED = 'ADD_BREED';
 const SERVERHEROKU = 'https://dogs-pi-spa.herokuapp.com'
 
 export const getBreeds = () => async dispatch => {
-    const response = await axios.get(`${SERVERHEROKU}/dogs`)
-    dispatch({type: 'GET_BREEDS', payload: response.data})
+  const response = await axios.get(`${SERVERHEROKU}/dogs`)
+  dispatch({ type: 'GET_BREEDS', payload: response.data })
 }
 
 export const getTemps = () => async dispatch => {
-    const temps = await axios.get(`${SERVERHEROKU}/temperament`)
-    dispatch({type: 'GET_TEMPERAMENT', payload: temps.data})
+  const temps = await axios.get(`${SERVERHEROKU}/temperament`)
+  dispatch({ type: 'GET_TEMPERAMENT', payload: temps.data })
 }
 
 export function weightAndAlpha(option) {
-  return { type: option}
+  return { type: option }
 }
 
 export function searchBreed(option) {
-  return { type: 'SEARCH_BREED', payload: option}
+  return { type: 'SEARCH_BREED', payload: option }
 }
 
 export function filterTemp(option) {
-  return { type: 'FILTER_BY_TEMP', payload: option}
+  return { type: 'FILTER_BY_TEMP', payload: option }
 }
 
 export function filterOrigin(option) {
@@ -41,13 +41,13 @@ export function filterOrigin(option) {
 }
 
 export const searchBreedDetail = (id) => async dispatch => {
-    const response = await axios.get(`${SERVERHEROKU}/dogs/${id}`)
-    dispatch({type: 'GET_DETAIL', payload: response.data})
+  const response = await axios.get(`${SERVERHEROKU}/dogs/${id}`)
+  dispatch({ type: 'GET_DETAIL', payload: response.data })
 }
 
 export function addBreed(breed) {
   return async function (dispatch) {
-    
+
     const response = await axios.post(
       `${SERVERHEROKU}/dog`,
       breed
@@ -56,4 +56,18 @@ export function addBreed(breed) {
   };
 }
 
-export const clearDetail = () => ({type: 'CLEAR_DETAIL'})
+export const clearDetail = () => ({ type: 'CLEAR_DETAIL' })
+
+// const fetchData = (valor) => {
+//   return (dispatch) => {
+//     dispatch(accionARealizar());
+//     axios.get(`url/${valor}`)
+//       .then(response => {
+//         dispatch(accionCuandoSeaSuccess([response.data]));
+//       })
+//       .catch(error => {
+//         dispatch(accionCuandoSeaFailure('No se encontro la data'));
+//       });
+//   }
+// }
+// export default fetchData

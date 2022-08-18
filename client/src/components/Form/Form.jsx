@@ -53,17 +53,20 @@ export default function Form() {
   }
   function validation(input) {
     var errors = {};
+    
     // Name
     var namePattern = /^[a-z ]+$/g;
     if (!input.name) errors.name = "Name can't be blank";
     else if (!namePattern.test(input.name)) {
       errors.name = "Only lowercase letters allowed";
     }
+
     // Image
     var imgPattern = /(https?:\/\/.*\.(?:png|jpg))/i;
     if (!input.image) errors.image = "Image link can't be blank";
     else if (!imgPattern.test(input.image))
       errors.image = "Must be a image link";
+
     // Height
     if (!input.minHeight) errors.minHeight = "Min Height can't be blank";
     else if (input.minHeight <= 0) errors.minHeight = "Must be above zero";
@@ -73,6 +76,7 @@ export default function Form() {
     }
     if (!input.maxHeight) errors.maxHeight = "Max Height can't be blank";
     else if (input.maxHeight <= 0) errors.maxHeight = "Must be above zero";
+
     // Weight
     if (!input.minWeight) errors.minWeight = "Min Weight can't be blank";
     else if (input.minWeight <= 0) errors.minWeight = "Must be above zero";
@@ -82,6 +86,7 @@ export default function Form() {
     }
     if (!input.maxWeight) errors.maxWeight = "Max Weight can't be blank";
     else if (input.maxWeight <= 0) errors.maxWeight = "Must be above zero";
+
     // Life Span
     if (!input.minLifeSpan) errors.minLifeSpan = "Min LifeSpan can't be blank";
     else if (input.minLifeSpan <= 0) errors.minLifeSpan = "Must be above zero";
