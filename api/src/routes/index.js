@@ -55,7 +55,7 @@ router.get('/dogs', function (req, res) {
                 }
                 if (found) {
                     res.status(200).send(breedsWithName)
-                    
+
                 }
                 else {
                     res.status(404).send('<h1>ERROR: breed not found. Try again!</h1>')
@@ -118,6 +118,20 @@ router.post('/dog', async function (req, res) {
     catch (e) {
         console.log(e)
         res.status(404).send('An error has ocurred', e)
+    }
+})
+
+router.delete('/dogs/:idRaza', async (req, res, next) => {
+    const { idRaza } = req.params;
+    try {
+        await Dog.destroy({
+            where: {
+                id: idRaza,
+            },
+        })
+        res.send('Dog eliminated')
+    } catch (e){
+        next(e)
     }
 })
 
