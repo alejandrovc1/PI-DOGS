@@ -1,6 +1,6 @@
 .card {
     width: 40vw;
-    height: 87vh;
+    height: auto;
     margin: 10px auto;
     padding: 15px;
     border-radius: 5px;

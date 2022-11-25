@@ -61,6 +61,7 @@ function Cards() {
       <>
         <h1>Database empty!</h1>
         <img src={saddog} alt="sad dog" />
+        <br/>
         <Footer />
       </>
     );
@@ -100,7 +101,7 @@ function Cards() {
           }
           return list;
         })()} */}
-        <Footer />
+        {/* <Footer /> */}
       </>
     );
   } else {

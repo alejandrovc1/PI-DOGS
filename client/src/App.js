@@ -4,6 +4,7 @@ import LandingPage from './components/Landing Page/LandingPage.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import Form from './components/Form/Form';
 import './App.css';
+import Loading from "./components/Loading/Loading.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/form" element={ <Form/> }/>
+          <Route path="/loading" element={ <Loading/> }/>
         </Routes>
         
       </div>

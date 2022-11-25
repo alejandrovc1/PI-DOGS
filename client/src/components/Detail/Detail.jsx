@@ -23,7 +23,6 @@ function Detail() {
       <>
         <Header />
         <Loading />
-        <Footer />
       </>
     );
   else {
@@ -48,7 +47,9 @@ function Detail() {
             </p>
           </div>
         </div>
+        <div>
         <Footer />
+        </div>
       </>
     );
   }
