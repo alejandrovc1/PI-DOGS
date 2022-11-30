@@ -20,15 +20,16 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const {getTempsFromAPI} = require('./getTemps.js')
+const CONSTANTS = require('./config.js')
 
 // Syncing all the models at once.
 // {force : true}
 // 
 conn.sync({force : true}).then(() => {
-  server.listen(process.env.PORT || 3001, () => {
+  server.listen(CONSTANTS.PORT, () => {
     
     getTempsFromAPI()
-    console.log('---Listening at 3001---');
+    console.log('Listening at PORT',CONSTANTS.PORT);
   });
   
 });
