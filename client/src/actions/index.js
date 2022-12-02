@@ -12,7 +12,7 @@ export const GET_DETAIL = 'GET_DETAIL';
 export const CLEAR_DETAIL = 'CLEAR_DETAIL';
 export const ADD_BREED = 'ADD_BREED';
 
-const SERVER = 'http://localhost:3001'
+const SERVER = process.env.SERVER || 'http://localhost:3001'
 
 export const getBreeds = () => async dispatch => {
   const response = await axios.get(`${SERVER}/dogs`)
